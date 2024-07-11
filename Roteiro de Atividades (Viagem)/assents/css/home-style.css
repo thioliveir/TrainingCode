@@ -1,0 +1,177 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html, input, select, button, option {
+    font-family: 'Inter', sans-serif;
+    background-color: #09090B;
+    color: #FAFAFA;
+    letter-spacing: -0.02em;
+}
+  
+input, select, button {
+    width: 100%;
+}
+  
+input, select {
+    all: unset;
+}
+h1 {
+    font-size: 24px;
+    font-weight: 600;
+    line-height: 120%;
+    text-align: center;
+}
+  
+/* CLASSES REUTILIZAVEIS */
+.bg-gray {
+    background-color: #18181B;
+    box-shadow: 0px 8px 8px rgba(0, 0, 0, 0.1), 0px 4px 4px rgba(0, 0, 0, 0.1), 0px 2px 2px rgba(0, 0, 0, 0.1), 0px 0px 0px 1px rgba(0, 0, 0, 0.1), inset 0px 0px 0px 1px rgba(255, 255, 255, 0.03), inset 0px 1px 0px rgba(255, 255, 255, 0.03);
+    border-radius: 12px;
+}
+  
+/* LAYOUT */
+#app {
+    padding: 40px 20px;
+    max-width: 320px;
+    margin: auto;
+}
+#footer {
+    margin-top: 32px;
+    display: flex;
+    gap: 36px;
+    justify-content: center;
+}
+
+
+  
+/* Formulario */
+#place {
+    display: flex;
+    gap: 8px;
+    font-size: 14px;
+    align-items: center;
+    padding: 16px;
+    margin-bottom: 32px;
+    line-height: 140%;
+}
+  
+.container {
+    display: grid;
+    gap: 8px;
+}
+.forms {
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    padding: 18px;
+    background-color: #09090B;
+    border: 1px solid #27272A;
+    border-radius: 8px;
+}
+.forms:focus-within {
+    outline: 2px solid yellowgreen;
+}
+  
+button {
+    margin-top: 12px;
+    border: none;
+    padding: 12px 20px;
+    background-color: #BEF264;
+    border-radius: 8px;
+    color: #1A2E05;
+    font-weight: 500;
+    font-size: 16px;
+    cursor: pointer;
+}
+  
+/* ATIVIDADES */
+  
+main {
+    margin-top: 32px;
+    display: grid;
+    gap: 24px;
+    align-items: center;
+}
+section {
+    display: grid;
+    gap: 10px;
+}
+section .bg-gray {
+    padding: 10px 16px;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+section .bg-gray:has(:checked) .active,
+section .bg-gray .inactive {
+    display: block;
+}
+  
+section .bg-gray:has(:checked) .inactive,
+section .bg-gray .active {
+    display: none;
+}
+  
+section input[type="checkbox"] {
+    position: absolute;
+    inset: 0;
+}
+  
+section .bg-gray > div {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+  
+time {
+    font-size: 14px;
+    color: #A1A1AB;
+    text-align: right;
+}
+  
+time.full {
+    display: none;
+}
+
+/* FOOTER */
+#footer p {
+    font-size: 20px;
+}
+footer a {
+    text-decoration: none;
+}
+  
+@media (width > 1024px) {
+    #app {
+      display: flex;
+      max-width: 960px;
+      gap: 32px;
+      align-items: start;
+    }
+    main {
+      margin-top: 0;
+      flex: 1;
+    }
+    h1 {
+      text-align: left;
+    }
+    time.full {
+      display: block;
+    }
+    time.short {
+      display: none;
+    }
+}
+  
+section .bg-gray {
+    animation: apper 1s;
+}
+  
+@keyframes apper {
+    from {
+      opacity: 0;
+    }
+}
